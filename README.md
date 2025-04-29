@@ -1,2 +1,2 @@
 # GBSanaly
-Community analysis of Great Boiling Spring communities.
+Population analysis of Thermoflexus Hugenholtzii in Great Boiling Spring
