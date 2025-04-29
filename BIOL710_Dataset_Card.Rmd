@@ -1,8 +1,3 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
 **Dataset Title:** Population Variance of Thermoflexus hugenholtzii in Great Boiling Spring
 
 **Dataset Curator:** Gillyan Valencia, MS graduate student, José R. de la Torre lab, Department of Biology, San Francisco State University (SFSU)
