@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 ## Introduction
 
 Thermophilic microorganisms, capable of living at extreme temperatures in habitats like geothermal springs, offer unique insights into the evolution of microbial life and life’s potential in harsh environments. (Damer and Deamer, 2020). While microbial evolution has been studied across different environments (Nguyen et al., 2021), the evolution of population genomics and community-level dynamics within geothermal springs remain poorly understood. The Great Boiling Spring (GBS) in Gerlach, Nevada, provides an ideal system to explore these dynamics, as its microbial communities are structured by temperature gradients and micro-environments such as sediment and the water column (Cole et al., 2013). Thermoflexus hugenholtzii—a dominant thermophile across sites in the Great Boiling Spring (GBS) system in Gerlach, Nevada—provides an ideal model to investigate fine-scale genetic variation across environmental gradients. This study uses metagenomic sequencing and population genomics tools to examine the microevolutionary dynamics of T. hugenholtzii, focusing on single nucleotide polymorphisms (SNPs) and single codon variations (SCVs) within genes critical to core cellular functions. 
@@ -18,8 +23,8 @@ To quantify and compare SCV frequencies in three conserved genes of T. hugenholt
 
 ```{r}
 # Load Data
-snp <- read.csv("Thermo_Hugo_SNP.csv")
-scv <- read.csv("Thermo_Hugo_SCV.csv")
+snp <- read.csv("../Data/Thermo_Hugo_SNP.csv")
+scv <- read.csv("../Data/Thermo_Hugo_SCV.csv")
 
 #View Data
 
