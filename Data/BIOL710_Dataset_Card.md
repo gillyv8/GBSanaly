@@ -7,12 +7,10 @@ la Torre lab, Department of Biology, San Francisco State University
 
 **Dataset version:** 1.2, 4.24.25
 
-**Dataset citation and DOI:** Data statement author: Gillyan Valencia,
-MS graduate student, de la Torre Lab, Department of Biology, San
-Francisco State University
+**Dataset citation and DOI:** 
+Data statement author: Gillyan Valencia, MS graduate student, de la Torre Lab, Department of Biology, San Francisco State University
 
-**Data statement citation:** authors, date, title, version, institution,
-and URL or DOI.
+**Data statement citation:** authors, date, title, version, institution, and URL or DOI.
 
 ### Languages
 
@@ -20,7 +18,7 @@ English
 
 ## Datset Summary
 
-This dataset contains frequences of single nucleotide variant (SNV) and
+This dataset contains frequencies of single nucleotide variant (SNV) and
 single codon variant (SCV) data for selected core genes (rpoB, gyrB,
 recA) across multiple environmental samples. Each variant record
 includes positional information, associated gene annotations, allele or
@@ -28,6 +26,10 @@ codon frequencies, and contextual data such as sampling site, month, and
 temperature. This dataset provides a resource for exploring microbial
 population structure, genetic diversity, and evolutionary pressures
 across spatial and temporal gradients.
+
+## Data Format
+
+All data are frequency values 
 
 ## Data Collection:
 
@@ -43,12 +45,31 @@ illumina sequencing.
 
 **Bioinformatics:** Raw reads were obtained of the forward and reverse
 strand for each of the 5 sample points through illumina sequencing. The
-raw reads were assembled using SPAdes followed by binning with MetaBat2.
-Using Anvio v8, gene annotations were performed based on the Clusters of
+raw reads were de novo assembled separately using SPAdes (v. 4.1.0) with 
+parameters: -meta -k 21,33,55,77,99. The generated scaffolds.fasta file was 
+used for binning with MetaBat2 (v. 2.17). The metagenome-assembled 
+genomes (MAGs) generated from MetaBat2 were checked for contamination and
+completeness to ensure genomes selected were of high quality as well as 
+taxonomically classified with gtdbtk (v2.4.0). Thermoflexus was chosen because 
+it was ubiquitously dispersed across all sample sites and had high completeness 
+and low contamination.
+
+The reference MAG of Thermoflexus hugenholtzii was chosen as the representative genome 
+based on its high completeness (91.64%) and low-contamination (1.36%).
+Using Anvio v8, gene annotations were added to based on the Clusters of
 Orthologous Groups (COG) database. Functional annotations were used to
-extract sequences matching genes of interest, including DNA polymerase
-III alpha, RNA polymerase subunit beta, and DNA gyrase subunit B, for
-downstream comparative and evolutionary analyses.
+extract sequences matching genes of interest, including RecA Recombinase (recA), 
+RNA polymerase subunit beta (rpoB), and DNA gyrase subunit B (gyrB), for
+downstream comparative and evolutionary analyses. 
+
+Single-nucleotide polymorphism (SNP) and single-codon variant (SCV) 
+frequencies were calculated using Anvi’o’s variant detection pipeline. 
+Aligned reads were mapped to the reference genome using Bowtie2, and variants 
+were identified at each position across all samples. SNP frequencies reflect 
+the proportion of reads supporting nucleotide-level variants, while SCV frequencies 
+quantify codon-level variation within protein-coding genes. These frequencies were 
+extracted per gene and used for statistical analysis of 
+site- and time-dependent variation.
 
 ## Curation Rational:
 
