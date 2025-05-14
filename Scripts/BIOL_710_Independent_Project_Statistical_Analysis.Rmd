@@ -29,8 +29,12 @@ I first checked the distribution of the data to figure out which statistical met
 
 ```{r}
 # Load SCV dataset
-scv <- read.csv("Thermo_Hugo_SCV.csv")
+scv <- read.csv("../Data/Thermo_Hugo_SCV.csv")
 #str(scv)
+```
+
+```{r}
+library(tidyverse)
 ```
 
 
@@ -107,3 +111,13 @@ ggplot(scv_clean, aes(x = SiteMonth, y = scv_freq)) +
 
 summary(SCV_GLMM)
 ```
+
+## References
+
+Cole, J. K., Peacock, J. P., Dodsworth, J. A., Williams, A. J., Thompson, D. B., Dong, H., Wu, G., & Hed- lund, B. P. (2013). Sediment microbial communities in Great Boiling Spring are controlled by temperature and distinct from water communities. The ISME Journal, 7(4), 718– 729. https://doi.org/10.1038/ismej. 2012.157
+
+Damer, B., & Deamer, D. (2020). The Hot Spring Hypothesis for an Origin of Life. Astrobiology, 20(4), 429–452. https://doi.org/10.1089/ast.2019.2045
+
+Kees, E. D., Murugapiran, S. K., Bennett, A. C., & Hamilton, T. L. (2022). Distribution and Genomic Variation of Thermophilic Cyanobacteria in Diverse Microbial Mats at the Upper Temperature Limits of Photosynthesis. mSystems, 7(5), e00317-22. https://doi.org/10.1128/msystems.00317-22
+
+Nguyen, J., Lara-Gutiérrez, J., & Stocker, R. (2021). Environmental fluctuations and their effects on mi- crobial communities, populations and individuals. FEMS Microbiology Reviews, 45(4), fuaa068. https: //doi.org/10.1093/femsre/fuaa068
