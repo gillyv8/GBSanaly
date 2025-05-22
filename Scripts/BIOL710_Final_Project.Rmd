@@ -1,5 +1,5 @@
 ---
-title: "Independent Project Statistical Analysis"
+title: "BIOL 710- Final Project"
 author: "Gillyan Valencia"
 output:
   pdf_document: default
@@ -10,8 +10,6 @@ output:
 Thermophilic microorganisms, capable of living at extreme temperatures in habitats like geothermal springs, offer unique insights into the evolution of microbial life and life’s potential in harsh environments. (Damer and Deamer, 2020). While microbial evolution has been studied across different environments (Nguyen et al., 2021), the evolution of population genomics and community-level dynamics within geothermal springs remain poorly understood. The Great Boiling Spring (GBS) in Gerlach, Nevada, provides an ideal system to explore these dynamics, as its microbial communities are structured by temperature gradients and micro-environments such as sediment and the water column (Cole et al., 2013). Thermoflexus hugenholtzii, a dominant thermophile across sites in the Great Boiling Spring (GBS) system in Gerlach, Nevada, provides an ideal location to investigate fine-scale genetic variation across environmental gradients. This study uses metagenomic sequencing and population genomics tools to examine the microevolutionary dynamics of T. hugenholtzii, focusing on single codon variations (SCVs) within genes critical to core cellular functions. 
 
 Given that temperature is a key factor shaping microbial communities in GBS (Cole et al., 2013; Kees et al., 2022), this study aims to examine how microbial community composition and population genomics evolve in response to seasonal temperature variations. A high-quality metagenome-assembled genome (MAG) generated from the most complete, least contaminated sample (June Site B) served as the reference genome. SCV frequencies across five sample sites were analyzed in relation to site-specific and seasonal temperature fluctuations. This approach allows for the exploration of how environmental variables influence genetic variation within microbial populations, contributing to a broader understanding of microbial genome plasticity and ecological adaptation in extreme ecosystems.
-
-
 
 ## Research Question
 
@@ -32,20 +30,21 @@ The dataset and all scripts can be found at the following link: https://github.c
 
 I first checked the distribution of the data for normality to figure out which statistical method was best. All three genes showed non-normality on there distributions. I used a generalized linear mixed model (GLMM) with a beta distribution to analyze single codon variants (SCVs) frequency, where the frequencies all fell between 0 and 1. The model included fixed effects for Site and Month and their interactions on SCV frequencies within the rpoB, recA, and gyrB genes. This allowed for me to assess both main effects and gene-specific environmental interactions. The model was fit using the glmmTMB package in R.
 
+```{r message=FALSE, warning=FALSE}
+library(ggplot2)
+library(tidyverse)
+library(glmmTMB)
+```
+
 ```{r}
-# Load SCV dataset
-scv <- read.csv("../Data/Thermo_Hugo_SCV.csv")
+#SCV dataset
+scv <- read.csv("Thermo_Hugo_SCV.csv")
 #str(scv)
 ```
 
-```{r message=FALSE, warning=FALSE}
-library(tidyverse)
-library(viridis)
-```
-
-
 ```{r}
-# Check Normality
+# Checking for normality
+
 rpoB_scv_data <- subset(scv, Gene_ID == "rpoB")
 rpoB_scv_hist <- ggplot(rpoB_scv_data, aes(x = scv_freq)) +
   geom_histogram(binwidth = 0.01)
@@ -72,7 +71,6 @@ Site and Month have no effect on SCV frequency in any of the genes tested.
 SCV frequency varies significantly by Site and/or Month for at least one gene.
 
 ```{r}
-library(glmmTMB)
 # SCV
 
 # SCV Frequency GLM
@@ -138,3 +136,9 @@ Damer, B., & Deamer, D. (2020). The Hot Spring Hypothesis for an Origin of Life.
 Kees, E. D., Murugapiran, S. K., Bennett, A. C., & Hamilton, T. L. (2022). Distribution and Genomic Variation of Thermophilic Cyanobacteria in Diverse Microbial Mats at the Upper Temperature Limits of Photosynthesis. mSystems, 7(5), e00317-22. https://doi.org/10.1128/msystems.00317-22
 
 Nguyen, J., Lara-Gutiérrez, J., & Stocker, R. (2021). Environmental fluctuations and their effects on mi- crobial communities, populations and individuals. FEMS Microbiology Reviews, 45(4), fuaa068. https: //doi.org/10.1093/femsre/fuaa068
+
+
+
+
+
+
