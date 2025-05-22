@@ -18,14 +18,13 @@ English
 
 ## Datset Summary
 
-This dataset contains frequencies of single nucleotide variant (SNV) and
-single codon variant (SCV) data for selected core genes (rpoB, gyrB,
-recA) across multiple environmental samples. Each variant record
-includes positional information, associated gene annotations, allele or
-codon frequencies, and contextual data such as sampling site, month, and
-temperature. This dataset provides a resource for exploring microbial
-population structure, genetic diversity, and evolutionary pressures
-across spatial and temporal gradients.
+This dataset contains frequencies and single codon variant (SCV) 
+data for selected core genes (rpoB, gyrB, and recA) across multiple 
+environmental samples. Each variant record includes positional 
+information, associated gene annotations, allele or codon frequencies, 
+and contextual data such as sampling site, month, and temperature. 
+This dataset provides a resource for exploring microbial population structure,
+genetic diversity, and evolutionary pressures across spatial and temporal gradients.
 
 ## Data Format
 
@@ -62,25 +61,22 @@ extract sequences matching genes of interest, including RecA Recombinase (recA),
 RNA polymerase subunit beta (rpoB), and DNA gyrase subunit B (gyrB), for
 downstream comparative and evolutionary analyses. 
 
-Single-nucleotide polymorphism (SNP) and single-codon variant (SCV) 
-frequencies were calculated using Anvi’o’s variant detection pipeline. 
+Single-codon variant (SCV)frequencies were calculated using Anvi’o’s variant detection pipeline. 
 Aligned reads were mapped to the reference genome using Bowtie2, and variants 
-were identified at each position across all samples. SNP frequencies reflect 
-the proportion of reads supporting nucleotide-level variants, while SCV frequencies 
+were identified at each position across all samples. SCV frequencies 
 quantify codon-level variation within protein-coding genes. These frequencies were 
 extracted per gene and used for statistical analysis of 
 site- and time-dependent variation.
 
 ## Curation Rational:
 
-This dataset was created to analyze variation in SNPs and SCVs in the
+This dataset was created to analyze variation of SCVs in the
 thermophilic bacteria Thermoflexus Hugenholtzii of 3 commonly studied
 core genes rpoB- the beta subunit of RNA polymerase in bacteria, gyrB-
 the beta subunit of DNA gyrase, and recA- a key protein involved in the
 homologous DNA repair process.
 
-    # Datasets
-    snp <- read.csv("Thermo_Hugo_SNP.csv")
+    # Dataset
     scv <- read.csv("Thermo_Hugo_SCV.csv")
     head(scv)
 
@@ -98,23 +94,6 @@ homologous DNA repair process.
     ## 4             541    rpoB 0.24576271
     ## 5             541    rpoB 0.24277457
     ## 6             541    rpoB 0.08848614
-
-    head(snp)
-
-    ##   entry_id unique_pos_identifier                         contig_name     sample_id Temperature    Month Site
-    ## 1      587                   190 NODE_120_length_40467_cov_53.543128 June_A_thermo        82.8     June    A
-    ## 2      588                   190 NODE_120_length_40467_cov_53.543128 June_C_thermo        73.0    June     C
-    ## 3      753                   284 NODE_120_length_40467_cov_53.543128 June_C_thermo        73.0     June    C
-    ## 4      209                    56 NODE_120_length_40467_cov_53.543128  Feb_B_thermo        70.0 February    B
-    ## 5      210                    56 NODE_120_length_40467_cov_53.543128 June_B_thermo        83.0     June    B
-    ## 6      752                   283 NODE_120_length_40467_cov_53.543128 June_C_thermo        73.0     June    C
-    ##   ANVIO_Gene_Call Gene_ID   snp_freq
-    ## 1             541    rpoB 0.09397944
-    ## 2             541    rpoB 0.13684961
-    ## 3             541    rpoB 0.07507886
-    ## 4             541    rpoB 0.23430962
-    ## 5             541    rpoB 0.22285714
-    ## 6             541    rpoB 0.08090957
 
 ## Discussion of Biases
 
