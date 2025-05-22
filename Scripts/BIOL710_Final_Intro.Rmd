@@ -5,30 +5,27 @@ output:
 ---
 ## Introduction
 
-Thermophilic microorganisms, capable of living at extreme temperatures in habitats like geothermal springs, offer unique insights into the evolution of microbial life and life’s potential in harsh environments. (Damer and Deamer, 2020). While microbial evolution has been studied across different environments (Nguyen et al., 2021), the evolution of population genomics and community-level dynamics within geothermal springs remain poorly understood. The Great Boiling Spring (GBS) in Gerlach, Nevada, provides an ideal system to explore these dynamics, as its microbial communities are structured by temperature gradients and micro-environments such as sediment and the water column (Cole et al., 2013). Thermoflexus hugenholtzii—a dominant thermophile across sites in the Great Boiling Spring (GBS) system in Gerlach, Nevada—provides an ideal model to investigate fine-scale genetic variation across environmental gradients. This study uses metagenomic sequencing and population genomics tools to examine the microevolutionary dynamics of T. hugenholtzii, focusing on single nucleotide polymorphisms (SNPs) and single codon variations (SCVs) within genes critical to core cellular functions. 
+Thermophilic microorganisms, capable of living at extreme temperatures in habitats like geothermal springs, offer unique insights into the evolution of microbial life and life’s potential in harsh environments. (Damer and Deamer, 2020). While microbial evolution has been studied across different environments (Nguyen et al., 2021), the evolution of population genomics and community-level dynamics within geothermal springs remain poorly understood. The Great Boiling Spring (GBS) in Gerlach, Nevada, provides an ideal system to explore these dynamics, as its microbial communities are structured by temperature gradients and micro-environments such as sediment and the water column (Cole et al., 2013). Thermoflexus hugenholtzii—a dominant thermophile across sites in the Great Boiling Spring (GBS) system in Gerlach, Nevada—provides an ideal model to investigate fine-scale genetic variation across environmental gradients. This study uses metagenomic sequencing and population genomics tools to examine the microevolutionary dynamics of T. hugenholtzii, focusing on single codon variations (SCVs) within genes critical to core cellular functions. 
 
-Given that temperature is a key factor shaping microbial communities in GBS (Cole et al., 2013; Kees et al., 2022), this study aims to examine how microbial community composition and population genomics evolve in response to seasonal temperature variations. A high-quality metagenome-assembled genome (MAG) generated from the most complete, least contaminated sample (June Site B) served as the reference genome. SNP frequencies across five sample sites were analyzed in relation to site-specific and seasonal temperature fluctuations. This approach allows for the exploration of how environmental variables influence genetic variation within microbial populations, contributing to a broader understanding of microbial genome plasticity and ecological adaptation in extreme ecosystems.
+Given that temperature is a key factor shaping microbial communities in GBS (Cole et al., 2013; Kees et al., 2022), this study aims to examine how microbial community composition and population genomics evolve in response to seasonal temperature variations. A high-quality metagenome-assembled genome (MAG) generated from the most complete, least contaminated sample (June Site B) served as the reference genome. SCV frequencies across five sample sites were analyzed in relation to site-specific and seasonal temperature fluctuations. This approach allows for the exploration of how environmental variables influence genetic variation within microbial populations, contributing to a broader understanding of microbial genome plasticity and ecological adaptation in extreme ecosystems.
 
 ## Research Question
 
-How do temperature and site-specific environmental conditions influence single nucleotide polymorphism (SNP) and single codon variation (SCV) in core functional genes of Thermoflexus hugenholtzii across spatial and seasonal gradients in Great Boiling Spring?
+How do temperature and site-specific environmental conditions influence single codon variation (SCV) in the genes rpoB, gyrB, and recA of Thermoflexus hugenholtzii across spatial and seasonal gradients in Great Boiling Spring?
 
 ## Specific Aims
 
 **Aim 1: **
-To quantify and compare SNP frequencies in three conserved genes of T. hugenholtzii across five metagenomic samples and assess their correlation with temperature and sampling site.
 
-**Aim 2:**
 To quantify and compare SCV frequencies in three conserved genes of T. hugenholtzii across five metagenomic samples and assess their correlation with temperature and sampling site.
 
 ```{r}
 # Load Data
-snp <- read.csv("../Data/Thermo_Hugo_SNP.csv")
+
 scv <- read.csv("../Data/Thermo_Hugo_SCV.csv")
 
 #View Data
 
-#head(snp)
 #head(scv)
 ```
 
