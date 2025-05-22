@@ -24,7 +24,7 @@ To quantify and compare SCV frequencies in three conserved genes of T. hugenholt
 
 ## Dataset Description
 
-
+This dataset originates from sediment samples collected from Great Boiling Spring in Gerlach, Nevada, with DNA extracted and sequenced using Illumina short-read technology. Metagenomic data were assembled using SPAdes and binned into MAGs with MetaBat2, followed by quality filtering and taxonomic classification. A high-quality Thermoflexus hugenholtzii MAG was selected for functional and evolutionary analysis using COG-based annotations in Anvi’o. Single-codon variant (SCV) frequencies were calculated per gene to assess codon-level variation across sites.
 
 ## Statistical Approach
 
